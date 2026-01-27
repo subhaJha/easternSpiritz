@@ -1,0 +1,147 @@
+/* ================= BRAND PAGE ================= */
+
+.brands-page {
+  background: linear-gradient(180deg, #ffffff, #f4f4f4);
+}
+
+/* Spacing between brand sections */
+.brand-row {
+  padding: 80px 0;
+  position: relative;
+}
+
+/* Soft divider line between brands */
+.brand-row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 162, 77, 0.35),
+    transparent
+  );
+}
+
+/* ================= BRAND IMAGE ================= */
+
+.brand-image {
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+  display: block;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.18));
+  animation: floatBottle 6s ease-in-out infinite;
+}
+
+/* Hover polish */
+.brand-image:hover {
+  transform: scale(1.05) rotate(-1deg);
+  filter: drop-shadow(0 30px 55px rgba(0, 0, 0, 0.25));
+}
+
+/* Gentle floating motion */
+@keyframes floatBottle {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= BRAND TEXT ================= */
+
+.brand-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+/* Gold underline accent */
+.brand-name::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #c9a24d;
+  margin-top: 8px;
+}
+
+/* Category badge */
+.brand-category {
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: rgba(201, 162, 77, 0.12);
+  color: #7a5a18;
+  border-radius: 20px;
+}
+
+/* Description */
+.brand-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  max-width: 520px;
+}
+
+/* ================= BRAND COLOR THEMES ================= */
+
+/* Yaksha – Warm Whiskey */
+.brand-row:nth-of-type(1) {
+  background: linear-gradient(
+    135deg,
+    rgba(120, 70, 20, 0.06),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Salty Nerd – Cool Vodka */
+.brand-row:nth-of-type(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(40, 90, 130, 0.06),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Cherrapunji – Craft Gin */
+.brand-row:nth-of-type(3) {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 110, 90, 0.06),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .brand-row {
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .brand-description {
+    margin: auto;
+  }
+
+  .brand-name::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

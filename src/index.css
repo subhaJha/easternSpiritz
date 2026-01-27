@@ -1,0 +1,237 @@
+/* ================= FONT ================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+/* ================= BASE ================= */
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f6f6f6;
+  color: #111;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-warning {
+  color: #c9a24d !important;
+}
+
+.card {
+  border-radius: 18px;
+  border: none;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.section-light {
+  background: #ffffff;
+  color: #111;
+}
+
+.section-dark {
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  color: #fff;
+}
+
+.section-accent {
+  background: linear-gradient(135deg, #1c1c1c, #3a2c10);
+  color: #fff;
+}
+
+/* ================= LOADER ================= */
+
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.loader-content {
+  text-align: center;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Glass icon */
+.loader-glass {
+  width: 60px;
+  height: 80px;
+  border: 2px solid #c9a24d;
+  border-radius: 6px 6px 10px 10px;
+  margin: 0 auto 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.loader-glass::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 6px;
+  border: 2px solid #c9a24d;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+}
+
+.liquid {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, #c9a24d, #e0c26a);
+  animation: fill 15s linear forwards;
+}
+
+.loader-title {
+  color: #c9a24d;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.loader-subtitle {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+/* Loader progress bar */
+.loader-bar {
+  width: 220px;
+  height: 4px;
+  background: #222;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.loader-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #c9a24d, #e0c26a);
+  animation: loading 15s linear forwards;
+}
+
+/* Loader animations */
+@keyframes fill {
+  to { height: 100%; }
+}
+
+@keyframes loading {
+  to { width: 100%; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SCROLL / LOAD ANIMATIONS ================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CARD ANIMATIONS ================= */
+
+.animated-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.animated-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(201, 162, 77, 0.15),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.animated-card:hover::before {
+  opacity: 1;
+}
+
+/* Disable hover effects on touch devices */
+@media (hover: none) {
+  .animated-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+}
+
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

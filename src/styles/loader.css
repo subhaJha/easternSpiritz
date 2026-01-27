@@ -1,0 +1,83 @@
+/* ================= LOADER WRAPPER ================= */
+
+.loader-wrapper {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ================= CONTENT ================= */
+
+.loader-content {
+  text-align: center;
+}
+
+/* ================= LOGO ================= */
+
+.loader-logo {
+  width: 420px;
+  max-width: 80vw;
+  height: auto;
+  filter: drop-shadow(0 0 18px rgba(201,162,77,0.7));
+  animation:
+    logoFloat 2.8s ease-in-out infinite,
+    logoToNavbar 1.2s ease forwards;
+  animation-delay: 0s, 2.2s;
+}
+
+/* ================= TEXT ================= */
+
+.loader-title{
+margin-top: -100px;
+}
+.loader-subtitle {
+  color: #aaa;
+  letter-spacing: 1px;
+  margin-top: -15px;
+}
+
+/* ================= BAR ================= */
+
+.loader-bar {
+  width: 220px;
+  height: 3px;
+  background: rgba(255,255,255,0.15);
+  margin: 28px auto 0;
+  overflow: hidden;
+  border-radius: 3px;
+}
+
+.loader-bar span {
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #c9a24d, transparent);
+  animation: loadingBar 1.6s infinite;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes logoFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* THIS CREATES THE "TRAVEL" ILLUSION */
+@keyframes logoToNavbar {
+  to {
+    transform:
+      translate(-38vw, -42vh)
+      scale(0.35);
+    opacity: 0;
+  }
+}
+
+@keyframes loadingBar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(250%); }
+}
